@@ -1,0 +1,50 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome to Glitch!</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+  <form action="/exercise/new-user" method="post">
+    <h4>Add new user</h4>
+    <p> POST /exercise/new-user</p>
+    <input type="text" name="username" placeholder="username" required/>
+  <br>
+  <input type="submit"/>
+  </form>
+<form action="/exercise/add" method="post">
+    <h4>Add new exercise</h4>
+    <p> POST /exercise/add</p>
+    <input type="text" name="uid" placeholder="uid" required/><br>
+<input type="text" name="desc" placeholder="description"/><br>
+<input type="text" name="dur" placeholder="duration(min)" required/><br>
+<input type="date" name="date" placeholder="date"/>
+  <br>
+  <input type="submit" />
+  </form>
+</div>
+<div class="get">
+  GET users's exercise log: GET /exercise/log?{userId}[&from][&to][&limit]
+</div>
+  </body>
+</html>
